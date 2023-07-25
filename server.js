@@ -5,7 +5,7 @@ import connect from "./database/database.js";
 import idolRouter from "./router/idolRouter.js";
 
 const app = express();
-const port = process.env.PORT ?? 3000; // ?? = ||
+const port = process.env.PORT ?? 3000;
 
 app.use(express.json());
 
@@ -22,7 +22,7 @@ app.use(function (req, res, next) {
 
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "Get api successfully",
+    message: "Getting api successfully",
   });
 });
 

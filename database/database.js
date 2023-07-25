@@ -8,7 +8,7 @@ const connect = async (req, res) => {
     return connection; //return void
   } catch (error) {
     res.status(500).json({
-      message: "Loi server cmnr",
+      message: "Error Server cmnr",
     });
     console.log("Error cmnr: " + error);
     throw new Error("Fail to connect to DB cmnr");
