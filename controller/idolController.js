@@ -9,7 +9,7 @@ export const getAllIdol = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: "Loi server cmnr",
+      message: "Error Server cmnr",
     });
     console.log("Error cmnr: " + error);
     throw new Error("Error at getAllIdol in idolController");

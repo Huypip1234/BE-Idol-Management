@@ -1,6 +1,6 @@
-import * as idolModel from "../models/idolModel.js";
+import idolModel from "../models/idolModel.js";
 
 export const getAllIdol = async () => {
-  let allIdol = await idolModel();
+  let allIdol = await idolModel.find({});
   return allIdol;
 };
