@@ -1,6 +1,6 @@
 CRUD: through API
-- Home page: Table show all Idol
-- Create: Add new Idol (Modal)
+- Home page: Table show all Idol (OK)
+- Create: Add new Idol (Modal) 
 - Read: Get detail Idol (Modal) - show more (image, Desc, code)
 - Update: Edit Idol (Modal)
 - Delele: Delete Idol (Modal)

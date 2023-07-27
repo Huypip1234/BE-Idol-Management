@@ -19,7 +19,9 @@ app.use(function (req, res, next) {
   );
   next();
 });
+/* End Middle Ware */
 
+/* Router */
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Getting api successfully",
@@ -27,6 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/idol", idolRouter);
+/* End Router */
 
 app.listen(port, async () => {
   await connect();

@@ -3,7 +3,7 @@ import mongoose, { Schema, ObjectId } from "mongoose";
 export default mongoose.model(
   "idol_infos",
   new Schema({
-    id: { type: Number },
+    id: { type: ObjectId },
     name: {
       type: String, //type
       required: true, //required
@@ -15,10 +15,10 @@ export default mongoose.model(
       },
     },
     age: {
-      type: Number,
+      type: String,
       required: true,
     },
-    Height: { type: Number, required: true },
-    Weight: { type: Number, required: true },
+    height: { type: String, required: true },
+    weight: { type: String, required: true },
   })
 );
