@@ -19,7 +19,37 @@ export const insertIdol = async (req, res) => {
   try {
     let data = await idolRepository.insertIdol(req.body);
     res.status(200).json({
-      message: "Insert new Idol successfully",
+      message: "Insert new Idol Successfully",
+      data: data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.errors.name.message,
+    });
+    console.log("Error cmnr: " + error);
+  }
+};
+
+export const updateIdol = async (req, res) => {
+  try {
+    let data = await idolRepository.updateIdol(req.body);
+    res.status(200).json({
+      message: "Edit Idol Successfully",
+      data: data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Idol not found",
+    });
+    console.log("Error cmnr: " + error);
+  }
+};
+
+export const deleteIdol = async (req, res) => {
+  try {
+    let data = await idolRepository.deleteIdol(req.params.id);
+    res.status(200).json({
+      message: "Delete Idol Successfully",
       data: data,
     });
   } catch (error) {
