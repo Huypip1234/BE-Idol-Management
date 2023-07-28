@@ -9,7 +9,7 @@ export const getAllIdol = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error,
+      message: error.errors.name.message,
     });
     console.log("Error cmnr: " + error);
   }
@@ -39,7 +39,7 @@ export const updateIdol = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: "Idol not found",
+      message: error.errors.name.message,
     });
     console.log("Error cmnr: " + error);
   }
