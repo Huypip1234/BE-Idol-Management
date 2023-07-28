@@ -4,15 +4,14 @@ export const getAllIdol = async (req, res) => {
   try {
     let data = await idolRepository.getAllIdol();
     res.status(200).json({
-      message: "Get all Idol successfully",
+      message: "Getting all Idol successfully",
       data: data,
     });
   } catch (error) {
     res.status(500).json({
-      message: "Error Server cmnr",
+      message: error,
     });
     console.log("Error cmnr: " + error);
-    throw new Error("Error at getAllIdol in idolController");
   }
 };
 
@@ -25,9 +24,8 @@ export const insertIdol = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: "Error Server cmnr",
+      message: error.errors.name.message,
     });
     console.log("Error cmnr: " + error);
-    throw new Error("Error at insertIdol in idolController");
   }
 };
