@@ -22,6 +22,11 @@ export const updateIdol = async ({ id, name, age, height, weight }) => {
   return idol;
 };
 
+export const getIdolDetail = async (id) => {
+  let idolDetail = await idolModel.findById(id);
+  return idolDetail;
+};
+
 export const deleteIdol = async (id) => {
   const idolDeleted = await idolModel.deleteOne({ _id: id });
   return idolDeleted;

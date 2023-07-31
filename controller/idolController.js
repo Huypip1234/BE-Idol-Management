@@ -45,6 +45,21 @@ export const updateIdol = async (req, res) => {
   }
 };
 
+export const getIdolDetail = async (req, res) => {
+  try {
+    let data = await idolRepository.getIdolDetail(req.params.id);
+    res.status(200).json({
+      message: "Get Idol Detail Successfully",
+      data: data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.errors.name.message,
+    });
+    console.log("Error cmnr: " + error);
+  }
+};
+
 export const deleteIdol = async (req, res) => {
   try {
     let data = await idolRepository.deleteIdol(req.params.id);
