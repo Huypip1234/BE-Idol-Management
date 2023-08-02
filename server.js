@@ -3,9 +3,14 @@ import { config } from "dotenv";
 config();
 import connect from "./database/database.js";
 import idolRouter from "./router/idolRouter.js";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = process.env.PORT ?? 3000;
+
+// Fixed Payload too large
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 
 app.use(express.json());
 

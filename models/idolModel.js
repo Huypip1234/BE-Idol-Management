@@ -1,9 +1,10 @@
 import mongoose, { Schema, ObjectId } from "mongoose";
 
-export default mongoose.model(
+export const idolInfoModel = mongoose.model(
   "idol_infos",
   new Schema({
     id: { type: ObjectId },
+    image: String,
     name: {
       type: String, //type
       required: true, //required

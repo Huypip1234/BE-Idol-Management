@@ -9,7 +9,7 @@ export const getAllIdol = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.errors.name.message,
+      message: "Internal server error!",
     });
     console.log("Error cmnr: " + error);
   }
@@ -54,7 +54,7 @@ export const getIdolDetail = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.errors.name.message,
+      message: "Internal server error!",
     });
     console.log("Error cmnr: " + error);
   }
@@ -69,7 +69,7 @@ export const deleteIdol = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.errors.name.message,
+      message: "Internal server error!",
     });
     console.log("Error cmnr: " + error);
   }
