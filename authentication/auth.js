@@ -20,6 +20,7 @@ const checkToken = (req, res, next) => {
     return;
   }
   // Other
+  debugger
   const token = req.headers?.authorization?.split(" ")[1]; // Tach bear ra
   try {
     let jwtObject = jwt.verify(token, process.env.JWT_SECRET);
